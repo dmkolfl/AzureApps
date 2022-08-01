@@ -78,7 +78,7 @@ def pull_log_files():
                 f"+WHERE+LogDate+>+{past_time}"
     try:
         logging.info('Searching files last modified from {}'.format(past_time))
-        logging.info('Searching with query. {instance_url}{query}')
+        logging.info(f'Searching with query. {instance_url}{query}')
         r = requests.get(f'{instance_url}{query}', headers=headers)
     except Exception as err:
         logging.error(f'File list getting failed. Exiting program. {err}')
